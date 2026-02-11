@@ -1,4 +1,4 @@
-# Explainable Diabetic Retinopathy Detection
+# Explainable Diabetic Retinopathy Detection using CNN and Grad-CAM
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-Deep_Learning-red)](https://pytorch.org/)
@@ -149,11 +149,7 @@ The `app.py` provides:
 - Region highlighting  
 - Downloadable overlay image  
 
-Run locally:
-
-```bash
-streamlit run app.py
-```
+---
 
 ## Clinical Decision Support Layer
 
@@ -168,6 +164,8 @@ Based on predicted severity, the app provides:
 - Emergency alerts for severe conditions
 
 **Note**: This guidance is educational and not a substitute for professional medical advice.
+
+---
 
 ## Tech Stack
 
@@ -256,9 +254,8 @@ project directory/
 ```
 
 ### 4) Model Weights
-Download pretrained weights from the link below:
+**Download pretrained weights from the link below:**
 
-Download weights:
 https://drive.google.com/drive/folders/17xAzYhKT4YDh69gGoJ5dfzIYJzeOufNa?usp=sharing
 
 Place them inside the project directory
