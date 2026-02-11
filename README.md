@@ -1,4 +1,4 @@
-# 🩺 Explainable Diabetic Retinopathy Detection
+# Explainable Diabetic Retinopathy Detection
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-Deep_Learning-red)](https://pytorch.org/)
@@ -22,7 +22,6 @@ An end-to-end **Explainable AI system** for multi-class Diabetic Retinopathy (DR
 - [Project Structure](#project-structure)
 - [Sample Screenshots](#sample-screenshots)
 - [Setup & Installation](#setup--installation)
-- [Pretrained Weights](#pretrained-weights)
 
 ---
 
@@ -95,7 +94,7 @@ The flatten dimension is computed dynamically to maintain architectural flexibil
 
 Training flow:
 
-1. Load dataset using `ImageFolder`
+1. Load dataset 
 2. Perform 80/20 train-test split
 3. Train for 10 epochs
 4. Evaluate on unseen test data
@@ -155,3 +154,117 @@ Run locally:
 ```bash
 streamlit run app.py
 ```
+
+## Clinical Decision Support Layer
+
+Based on predicted severity, the app provides:
+
+- Dietary suggestions
+
+- Monitoring recommendations
+
+- Visit frequency guidance
+
+- Emergency alerts for severe conditions
+
+**Note**: This guidance is educational and not a substitute for professional medical advice.
+
+## Tech Stack
+
+* **Language:** Python 3.8+  
+* **Deep Learning Framework:** PyTorch, Torchvision  
+* **Explainability:** Grad-CAM (Manual Implementation), TorchCAM (SmoothGradCAM++)  
+* **Web Deployment:** Streamlit  
+* **Image Processing:** OpenCV, PIL  
+* **Visualization:** Matplotlib, NumPy  
+* **Development:** Jupyter Notebook  
+
+---
+
+## Project Structure
+```text
+.
+├── assets/                                # Grad-CAM outputs & screenshots
+├── Dataset/                               # Retinal image dataset (not pushed)
+│   ├── Mild/
+│   ├── Moderate/
+│   ├── No_DR/
+│   ├── Severe/
+│   └── Proliferate_DR/
+├── app.py                                 # Streamlit Deployment App
+├── training_testing.ipynb                 # Model Training & Evaluation
+├── classes.pth                            # Class label metadata
+├── model.pth                 
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## Sample Screenshots
+
+### Model Prediction
+*Displays the predicted Diabetic Retinopathy stage along with confidence score. The model achieves **98.31% test accuracy** on unseen data.*
+
+![Model Prediction](assets/prediction_output.png)
+
+---
+
+### Grad-CAM Visualization
+*Heatmap overlay highlighting the retinal regions that most influenced the model’s prediction. This improves interpretability and clinical trust.*
+
+![Grad-CAM Overlay](assets/gradcam_overlay.png)
+
+---
+
+### Region Localization
+*Threshold-based hotspot detection with contour/circle highlighting to precisely mark affected retinal regions.*
+
+![Region Detection](assets/region_detection.png)
+
+---
+
+### Side-by-Side Comparison
+*Original retinal image vs. Grad-CAM overlay for intuitive visual inspection.*
+
+![Comparison](assets/comparison.png)
+
+---
+
+## Setup & Installation
+
+### 1) Clone the Repo
+```bash
+git clone https://github.com/<your-username>/diabetic-retinopathy-detection.git
+```
+
+### 2) Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3) Prepare Dataset (Local)
+Download the Kaggle DR dataset and place it here:
+```text
+project directory/
+├── Dataset/
+│   ├── Mild/
+│   ├── Moderate/
+│   ├── No_DR/
+│   ├── Severe/
+│   └── Proliferate_DR/
+```
+
+### 4) Model Weights
+Download pretrained weights from the link below:
+
+Download weights:
+https://drive.google.com/drive/folders/17xAzYhKT4YDh69gGoJ5dfzIYJzeOufNa?usp=sharing
+
+Place them inside the project directory
+
+### 5) Run Streamlit App
+```bash
+streamlit run app.py
+```
+Visit the local URL to interact with the app.
