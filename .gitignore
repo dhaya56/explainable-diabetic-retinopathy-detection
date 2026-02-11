@@ -1,0 +1,29 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large model weights (DO NOT push to GitHub)
+model.pth
+
+# Dataset (if large)
+Dataset/
+
+# Streamlit cache
+.streamlit/
+
+# Virtual environments
+venv/
+.env/
+env/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
