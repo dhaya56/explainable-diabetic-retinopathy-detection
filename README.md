@@ -201,31 +201,17 @@ Based on predicted severity, the app provides:
 
 ## Sample Screenshots
 
-### Model Prediction
-*Displays the predicted Diabetic Retinopathy stage along with confidence score. The model achieves **98.31% test accuracy** on unseen data.*
-
-![Model Prediction](assets/prediction_output.png)
-
----
-
-### Grad-CAM Visualization
-*Heatmap overlay highlighting the retinal regions that most influenced the model’s prediction. This improves interpretability and clinical trust.*
-
-![Grad-CAM Overlay](assets/gradcam_overlay.png)
-
----
-
-### Region Localization
-*Threshold-based hotspot detection with contour/circle highlighting to precisely mark affected retinal regions.*
-
-![Region Detection](assets/region_detection.png)
-
----
-
 ### Side-by-Side Comparison
-*Original retinal image vs. Grad-CAM overlay for intuitive visual inspection.*
+*Original retinal image vs. Grad-CAM overlay highlighting the retinal regions that most influenced the model’s prediction.*
 
 ![Comparison](assets/comparison.png)
+
+---
+
+### Model Prediction
+*Displays the predicted Diabetic Retinopathy stage along with confidence score.
+
+![Model Prediction](assets/prediction_output.png)
 
 ---
 
